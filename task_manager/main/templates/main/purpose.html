@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Цели на год
+{% endblock %}
+
+{% block nav_purpose %}
+ active
+{% endblock %}
+
+{% block body %}
+    <h2>Добавить цели на год</h2><br>
+    <form method="post">
+        {% csrf_token %}
+        <input placeholder="Введите название" class="form-control"><br>
+        <textarea placeholder="Введите описание" class="form-control"></textarea><br>
+        <input placeholder="Введите приоритет" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Создать новую задачу
+{% endblock %}
+
+{% block nav_task %}
+ active
+{% endblock %}
+
+{% block body %}
+    <h2>Создать новую задачу</h2><br>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.body }}<br>
+        {{ form.status }}<br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span> {{ error }} </span>
+    </form>
+{% endblock %}

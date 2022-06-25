@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css"
+          integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK"
+          crossorigin="anonymous">
+
+    <style>
+          .div_main {
+          margin-left:10%;
+          margin-right:10%;
+          margin-top:30px;
+          }
+    </style>
+    </head>
+
+    <body>
+        <header class="d-flex justify-content-center py-3">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a href="{% url 'home' %}"
+                       class= "nav-link {% block nav_main %}{% endblock %}">Главная</a></li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}"
+                       class="nav-link {% block nav_about %}{% endblock %}">О нас</a></li>
+                <li class="nav-item">
+                    <a href="{% url 'create' %}"
+                       class="nav-link {% block nav_task %}{% endblock %}">Добавить задачу</a></li>
+                <li class="nav-item">
+                    <a href="{% url 'purpose' %}"
+                       class="nav-link {% block nav_purpose %}{% endblock %}">Добавить цель</a></li>
+              </ul>
+        </header>
+
+        <div class="div_main">
+            {% block body %} {% endblock %}
+        </div>
+    </body>
+</html>
